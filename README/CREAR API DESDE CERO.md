@@ -107,3 +107,28 @@ urlpatterns = [
 ```
 
 Aquí tendremos que crear un router a fuerzas ya que el método que estamos usando "viewset" se basa en esto para poder obtener todos los métodos del CRUD
+
+Pequeña anotación, para que tome en cuenta el ecosistema de Django REST Framework, tenemos que declararlo también dentro de nuestros "settings.py"
+
+![[Pasted image 20221121140412.png]]
+
+Por eso es que me estaba saliendo el error
+
+
+Entonces, ya creamos nuestra url, chequemos que nos aparece en el explorador al ingresar al link http://127.0.0.1:8000/api/watch/stream/
+
+![[Pasted image 20221121140507.png]]
+
+Aquí tenemos ya alojado el método POST gracias a el enrutador y la "viewset" que le dimos, así que probemos pasándole este Json para crear una nueva plataforma
+
+```Json
+{
+    "name": "Netflix",
+    "about": "Most expensive Streaming Platform and popular",
+    "website": "http://www.netflix.com"
+}
+```
+
+Perfecto si nos dejo sin problemas
+
+![[Pasted image 20221121141125.png]]
