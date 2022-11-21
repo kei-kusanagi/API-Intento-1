@@ -5,31 +5,33 @@ En este ejercicio intentaremos recrear la api que hicimos en [DRF_Project](https
 
 Comenzamos preparando una carpeta llamada "Intento 1" y comenzamos con lo basico, abrimos una terminal aquí y le damos ``git init`` para que nos cree un repositorio con git, luego creamos nuestro entorno virtual ``virtualenv -p python env`` y lo activamos ``.\env\Scripts\activate``
 
-![[Pasted image 20221121104212.png]]
+![image](/README/IMG/Pasted%20image%2020221121104212.png)
+
+
 
 Ahora si, empezamos instalando Django y Django REST Framework ``pip install django djangorestframework`` (lo podemos hacer en una sola instrucción)
 
-![[Pasted image 20221121104441.png]]
+![image](/README/IMG/Pasted%20image%2020221121104441.png)
 
 
 ## Creacion del proyecto
 
 Ahora creamos nuestro proyecto ``django-admin startproject watchmate .   `` (le ponemos el punto al final para que nos cree todos los archivos allí y no que cree otra carpeta llamada como el proyecto y dentro los archivos) luego creamos nuestra app (poniéndole un ``_app`` para que sea mas fácil de ver) ``python manage.py startapp watchlist_app`` y esta la declaramos en "settings.py"
 
-![[Pasted image 20221121110248.png]]
+![image](/README/IMG/Pasted%20image%2020221121110248.png)
 
 Hacemos nuestras migraciones y creamos nuestro super usuario
 
-![[Pasted image 20221121105851.png]]
+![image](/README/IMG/Pasted%20image%2020221121105851.png)
 
 Todo luce bien así que corramos el servidor ``python manage.py runserver``
 
-![[Pasted image 20221121110016.png]]
+![image](/README/IMG/Pasted%20image%2020221121110016.png)
 
 
 Creemos nuestra carpeta "api" dentro de "watchlist_app" y dentro creemos nuestros 3 archivos principales "serlializers.py" "urls.py" y "views.py"
 
-![[Pasted image 20221121111034.png]]
+![image](/README/IMG/Pasted%20image%2020221121111034.png)
 
 
 ## Modelos
@@ -51,7 +53,7 @@ class StreamPlataform(models.Model):
 Hacemos nuestras migraciones y luego vamos a "watchlist_app/admin.py" para agregar nuestro "StreamPlataform" a el panel de administración
 
 (antes y despues)
-![[Pasted image 20221121112745.png]]
+![image](/README/IMG/Pasted%20image%2020221121112745.png)
 
 Aquí directamente ya podemos agregar nuestras plataformas de streaming pero pues para eso no es una api, ósea no para agregarlas desde el panel de administración así que vallamos a crear nuestras "vistas", para esto necesitaremos "serializadores" y luego nuestras "urls"
 
@@ -110,14 +112,14 @@ Aquí tendremos que crear un router a fuerzas ya que el método que estamos usan
 
 Pequeña anotación, para que tome en cuenta el ecosistema de Django REST Framework, tenemos que declararlo también dentro de nuestros "settings.py"
 
-![[Pasted image 20221121140412.png]]
+![image](/README/IMG/Pasted%20image%2020221121140412.png)
 
 Por eso es que me estaba saliendo el error
 
 
 Entonces, ya creamos nuestra url, chequemos que nos aparece en el explorador al ingresar al link http://127.0.0.1:8000/api/watch/stream/
 
-![[Pasted image 20221121140507.png]]
+![image](/README/IMG/Pasted%20image%2020221121140507.png)
 
 Aquí tenemos ya alojado el método POST gracias a el enrutador y la "viewset" que le dimos, así que probemos pasándole este Json para crear una nueva plataforma
 
@@ -131,4 +133,4 @@ Aquí tenemos ya alojado el método POST gracias a el enrutador y la "viewset" q
 
 Perfecto si nos dejo sin problemas
 
-![[Pasted image 20221121141125.png]]
+![image](/README/IMG/Pasted%20image%2020221121141125.png)
